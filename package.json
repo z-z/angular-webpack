@@ -1,0 +1,27 @@
+{
+  "name": "angular",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^3.2.2",
+    "reflect-metadata": "^0.1.10",
+    "typescript": "^2.4.2",
+    "webpack": "^3.5.4"
+  },
+  "dependencies": {
+    "@angular/common": "^4.3.4",
+    "@angular/compiler": "^4.3.4",
+    "@angular/core": "^4.3.4",
+    "@angular/platform-browser": "^4.3.4",
+    "@angular/platform-browser-dynamic": "^4.3.4",
+    "rxjs": "^5.4.3",
+    "zone.js": "^0.8.16"
+  }
+}
