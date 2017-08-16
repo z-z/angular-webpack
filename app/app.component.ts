@@ -4,6 +4,6 @@ import './app.component.styl';
 
 @Component({
   selector: 'app-root',
-  template: require('html-loader!./app.component.html')
+  templateUrl: 'app/app.component.html'
 })
 export class AppComponent {}

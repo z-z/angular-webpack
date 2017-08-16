@@ -18,6 +18,19 @@ module.exports = {
 	module: {
 		rules: [
 			{
+				test: /\.html$/,
+				use: [{
+					loader: 'html-loader',
+					options: {
+						minimize: true,
+						removeAttributeQuotes: false,
+						caseSensitive: true,
+						customAttrSurround: [ [/#/, /(?:)/], [/\*/, /(?:)/], [/\[?\(?/, /(?:)/] ],
+						customAttrAssign: [ /\)?\]?=/ ]
+					}
+				}]
+			},
+			{
 				test: /\.ts$/,
 				exclude: /node_modules/,
 				loader: 'awesome-typescript-loader'
