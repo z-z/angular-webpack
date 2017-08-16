@@ -1,12 +1,16 @@
-const webpack = require('webpack');
 const path = require('path');
+const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-	entry: './main',
+	entry: {
+		main: ['./main']
+	},
 	output: {
-		filename: 'bundle.js',
-		path: path.resolve(__dirname, 'dist')
+		filename: '[name].js',
+		path: path.resolve(__dirname, 'dist/assets'),
+		publicPath: '/assets/'
 	},
 	resolve: {
 		extensions: ['.js', '.ts']
@@ -27,12 +31,20 @@ module.exports = {
 			}
 		]
 	},
+	devServer: {
+		stats: {
+			colors: true
+		},
+		compress: true
+	},
 	plugins: [
+		new HtmlWebpackPlugin({filename: '../index.html'}),
 		new webpack.ContextReplacementPlugin(
 			/angular(\\|\/)core(\\|\/)@angular/,
 			path.resolve(__dirname, './app')
 		),
 		new ExtractTextPlugin("styles.css"),
+		new webpack.HotModuleReplacementPlugin(),
 		//new webpack.optimize.UglifyJsPlugin()
 	]
 };
